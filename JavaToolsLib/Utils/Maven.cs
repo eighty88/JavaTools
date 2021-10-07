@@ -10,7 +10,7 @@ namespace JavaToolsLib.Utils
     {
         public static string getMavenPath()
         {
-            return Utils.GetAbsoluteUri("maven/");
+            return Utils.GetAbsoluteUri("\\maven");
         }
     }
 }

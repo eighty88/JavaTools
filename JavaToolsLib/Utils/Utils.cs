@@ -11,9 +11,10 @@ namespace JavaToolsLib.Utils
     {
         public static string GetAbsoluteUri(string filePath)
         {
-            FileInfo fileInfo = new FileInfo(filePath);
-            Uri uri = new Uri(fileInfo.FullName);
-            return uri.AbsoluteUri;
+            string path = Directory.GetCurrentDirectory();
+
+            var URL = new Uri(@path);
+            return new Uri(URL, @filePath).LocalPath;
         }
     }
 }
