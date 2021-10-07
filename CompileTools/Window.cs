@@ -9,7 +9,6 @@ namespace CompileTools
         private System.ComponentModel.IContainer components = null;
         private GroupBox groupBoxJDK;
         private CheckedListBox checkedListBoxJDK;
-        private TextBox textBox1;
         private string fileName;
 
         protected override void Dispose(bool disposing)
@@ -29,9 +28,10 @@ namespace CompileTools
 
             Text = "Javaをコンパイルする - " + fileName;
             List<string> list = new List<string>();
+            list.Add("JDK 16.0.2 (バンドルされたJDK)");
             foreach (string str in JavaRegistry.getJDKs())
             {
-                list.Add(str.Split('$')[0] + " (" + str.Split('$')[1] + ")");
+                list.Add("JDK " + str.Split('$')[0] + " (" + str.Split('$')[1] + ")");
             }
             checkedListBoxJDK.Items.AddRange(list.ToArray());
         }
@@ -40,7 +40,6 @@ namespace CompileTools
         {
             this.groupBoxJDK = new System.Windows.Forms.GroupBox();
             this.checkedListBoxJDK = new System.Windows.Forms.CheckedListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBoxJDK.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,26 +56,20 @@ namespace CompileTools
             // 
             // checkedListBoxJDK
             // 
+            this.checkedListBoxJDK.BackColor = System.Drawing.Color.Ivory;
+            this.checkedListBoxJDK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.checkedListBoxJDK.CheckOnClick = true;
             this.checkedListBoxJDK.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkedListBoxJDK.FormattingEnabled = true;
             this.checkedListBoxJDK.Location = new System.Drawing.Point(6, 58);
             this.checkedListBoxJDK.Name = "checkedListBoxJDK";
-            this.checkedListBoxJDK.Size = new System.Drawing.Size(328, 384);
+            this.checkedListBoxJDK.Size = new System.Drawing.Size(328, 366);
             this.checkedListBoxJDK.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(452, 197);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 299);
-            this.textBox1.TabIndex = 1;
+            this.checkedListBoxJDK.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxJDK_ItemCheck);
             // 
             // Window
             // 
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBoxJDK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -84,8 +77,29 @@ namespace CompileTools
             this.ShowIcon = false;
             this.groupBoxJDK.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
+        }
+
+        private void checkedListBoxJDK_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            checkedListBoxJDK.ItemCheck -= checkedListBoxJDK_ItemCheck;
+
+            if (e.NewValue == CheckState.Checked)
+            {
+                for (int i = 0; i < checkedListBoxJDK.Items.Count; i++)
+                {
+                    if (e.Index != i)
+                    {
+                        this.checkedListBoxJDK.SetItemChecked(i, false);
+                    }
+                }
+            }
+            else
+            {
+                e.NewValue = CheckState.Checked;
+            }
+
+            checkedListBoxJDK.ItemCheck += checkedListBoxJDK_ItemCheck;
         }
     }
 }
