@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JavaToolsLib.Utils
 {
-    class Class1
+    class Java
     {
     }
 }

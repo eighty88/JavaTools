@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompileTools", "CompileTools\CompileTools.csproj", "{A8224935-74B3-4777-866D-176F913538AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaToolsLib", "JavaToolsLib\JavaToolsLib.csproj", "{119D24CA-68C9-4112-B632-8B690BDEF593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunTools", "RunTools\RunTools.csproj", "{DB34CDC4-70C4-49AA-B865-1A59B957125C}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8224935-74B3-4777-866D-176F913538AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8224935-74B3-4777-866D-176F913538AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8224935-74B3-4777-866D-176F913538AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8224935-74B3-4777-866D-176F913538AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119D24CA-68C9-4112-B632-8B690BDEF593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119D24CA-68C9-4112-B632-8B690BDEF593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119D24CA-68C9-4112-B632-8B690BDEF593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119D24CA-68C9-4112-B632-8B690BDEF593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB34CDC4-70C4-49AA-B865-1A59B957125C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB34CDC4-70C4-49AA-B865-1A59B957125C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB34CDC4-70C4-49AA-B865-1A59B957125C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB34CDC4-70C4-49AA-B865-1A59B957125C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

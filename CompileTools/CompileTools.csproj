@@ -35,5 +35,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JavaToolsLib\JavaToolsLib.csproj">
+      <Project>{119d24ca-68c9-4112-b632-8b690bdef593}</Project>
+      <Name>JavaToolsLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
