@@ -22,7 +22,7 @@ namespace CompileTools
 
             InitializeComponent();
 
-            this.Text = "Javaをコンパイルする - " + fileName;
+            Text = "Javaをコンパイルする - " + fileName;
         }
 
         private void InitializeComponent()
