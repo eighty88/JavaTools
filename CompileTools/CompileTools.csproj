@@ -43,6 +43,14 @@
       <Project>{119d24ca-68c9-4112-b632-8b690bdef593}</Project>
       <Name>JavaToolsLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ToolComponents\ToolComponents.csproj">
+      <Project>{30b66d85-56f5-40b7-831e-ab6ac67b0649}</Project>
+      <Name>ToolComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilsLib\UtilsLib.csproj">
+      <Project>{7996e86a-9920-4928-a2bb-49a84e0348c4}</Project>
+      <Name>UtilsLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
