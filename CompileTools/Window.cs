@@ -37,7 +37,6 @@ namespace CompileTools
             this.Name = "Window";
             this.ShowIcon = false;
             this.ResumeLayout(false);
-
         }
     }
 }
