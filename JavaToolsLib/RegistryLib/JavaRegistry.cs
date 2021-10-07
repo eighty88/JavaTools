@@ -27,7 +27,7 @@ namespace JavaToolsLib.RegistryLib
             {
                 foreach (string str in registryKey.GetSubKeyNames())
                 {
-                    list.Add((string) localKey.OpenSubKey(@"SOFTWARE\JavaSoft\" + olderPath + @"\" + str).GetValue("JavaHome"));
+                    list.Add(str + "$" + (string) localKey.OpenSubKey(@"SOFTWARE\JavaSoft\" + olderPath + @"\" + str).GetValue("JavaHome"));
                 }
 
                 registryKey.Close();
@@ -38,7 +38,7 @@ namespace JavaToolsLib.RegistryLib
             {
                 foreach (string str in registryKey.GetSubKeyNames())
                 {
-                    list.Add((string)localKey.OpenSubKey(@"SOFTWARE\JavaSoft\" + newerPath + @"\" + str).GetValue("JavaHome"));
+                    list.Add(str + "$" + (string)localKey.OpenSubKey(@"SOFTWARE\JavaSoft\" + newerPath + @"\" + str).GetValue("JavaHome"));
                 }
 
                 registryKey.Close();
@@ -62,7 +62,7 @@ namespace JavaToolsLib.RegistryLib
             {
                 foreach (string str in registryKey.GetSubKeyNames())
                 {
-                    list.Add((string)localKey.OpenSubKey(@"SOFTWARE\JavaSoft\" + jrePath + @"\" + str).GetValue("JavaHome"));
+                    list.Add(str + "$" + (string)localKey.OpenSubKey(@"SOFTWARE\JavaSoft\" + jrePath + @"\" + str).GetValue("JavaHome"));
                 }
 
                 registryKey.Close();
