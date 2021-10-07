@@ -5,7 +5,7 @@ namespace CompileTools
     public class Window : Form
     {
         private System.ComponentModel.IContainer components = null;
-        private string FileName;
+        private string fileName;
 
         protected override void Dispose(bool disposing)
         {
@@ -16,9 +16,9 @@ namespace CompileTools
             base.Dispose(disposing);
         }
 
-        public Window()
+        public Window(string fileName)
         {
-            FileName = System.Environment.GetCommandLineArgs()[0];
+            this.fileName = fileName;
             InitializeComponent();
         }
 
@@ -30,7 +30,9 @@ namespace CompileTools
             // 
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Window";
+            this.ShowIcon = false;
             this.ResumeLayout(false);
 
         }

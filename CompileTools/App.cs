@@ -9,16 +9,18 @@ namespace CompileTools
     public class App
     {
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
-            if (args.Length < 1)
+            string[] arguments = System.Environment.GetCommandLineArgs();
+
+            if (arguments.Length <= 1)
             {
                 return;
             }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Window());
+            Application.Run(new Window(arguments[1]));
         }
     }
 }
