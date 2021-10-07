@@ -19,7 +19,10 @@ namespace CompileTools
         public Window(string fileName)
         {
             this.fileName = fileName;
+
             InitializeComponent();
+
+            this.Text = "Javaをコンパイルする - " + fileName;
         }
 
         private void InitializeComponent()
@@ -28,7 +31,7 @@ namespace CompileTools
             // 
             // Window
             // 
-            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Window";
