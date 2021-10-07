@@ -9,6 +9,7 @@ namespace CompileTools
         private System.ComponentModel.IContainer components = null;
         private GroupBox groupBoxJDK;
         private CheckedListBox checkedListBoxJDK;
+        private GroupBox groupBoxDependency;
         private string fileName;
 
         protected override void Dispose(bool disposing)
@@ -34,12 +35,14 @@ namespace CompileTools
                 list.Add("JDK " + str.Split('$')[0] + " (" + str.Split('$')[1] + ")");
             }
             checkedListBoxJDK.Items.AddRange(list.ToArray());
+            checkedListBoxJDK.SetItemChecked(0, true);
         }
 
         private void InitializeComponent()
         {
             this.groupBoxJDK = new System.Windows.Forms.GroupBox();
             this.checkedListBoxJDK = new System.Windows.Forms.CheckedListBox();
+            this.groupBoxDependency = new System.Windows.Forms.GroupBox();
             this.groupBoxJDK.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,9 +50,9 @@ namespace CompileTools
             // 
             this.groupBoxJDK.Controls.Add(this.checkedListBoxJDK);
             this.groupBoxJDK.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.groupBoxJDK.Location = new System.Drawing.Point(12, 101);
+            this.groupBoxJDK.Location = new System.Drawing.Point(12, 97);
             this.groupBoxJDK.Name = "groupBoxJDK";
-            this.groupBoxJDK.Size = new System.Drawing.Size(340, 448);
+            this.groupBoxJDK.Size = new System.Drawing.Size(335, 394);
             this.groupBoxJDK.TabIndex = 0;
             this.groupBoxJDK.TabStop = false;
             this.groupBoxJDK.Text = "JDKの設定";
@@ -61,15 +64,26 @@ namespace CompileTools
             this.checkedListBoxJDK.CheckOnClick = true;
             this.checkedListBoxJDK.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkedListBoxJDK.FormattingEnabled = true;
-            this.checkedListBoxJDK.Location = new System.Drawing.Point(6, 58);
+            this.checkedListBoxJDK.Location = new System.Drawing.Point(6, 46);
             this.checkedListBoxJDK.Name = "checkedListBoxJDK";
-            this.checkedListBoxJDK.Size = new System.Drawing.Size(328, 366);
+            this.checkedListBoxJDK.Size = new System.Drawing.Size(323, 340);
             this.checkedListBoxJDK.TabIndex = 0;
             this.checkedListBoxJDK.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxJDK_ItemCheck);
+            // 
+            // groupBoxDependency
+            // 
+            this.groupBoxDependency.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.groupBoxDependency.Location = new System.Drawing.Point(353, 97);
+            this.groupBoxDependency.Name = "groupBoxDependency";
+            this.groupBoxDependency.Size = new System.Drawing.Size(419, 394);
+            this.groupBoxDependency.TabIndex = 1;
+            this.groupBoxDependency.TabStop = false;
+            this.groupBoxDependency.Text = "依存関係";
             // 
             // Window
             // 
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.groupBoxDependency);
             this.Controls.Add(this.groupBoxJDK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
