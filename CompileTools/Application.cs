@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JavaToolsLib.Utils
+namespace CompileTools
 {
-    class Java
+    public class Application
     {
-        public static string getDefaultPath()
+        [STAThread]
+        static void Main(string[] args)
         {
-            return Utils.GetAbsoluteUri("\\jdk");
+
         }
     }
 }
