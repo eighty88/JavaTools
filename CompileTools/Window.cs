@@ -29,6 +29,7 @@ namespace CompileTools
             // Window
             // 
             this.ClientSize = new System.Drawing.Size(684, 461);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Window";
             this.ResumeLayout(false);
 
