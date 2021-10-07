@@ -8,5 +8,9 @@ namespace JavaToolsLib.Utils
 {
     class Maven
     {
+        public static string getMavenPath()
+        {
+            return Utils.GetAbsoluteUri("maven/");
+        }
     }
 }
