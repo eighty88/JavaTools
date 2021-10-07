@@ -5,6 +5,7 @@ namespace CompileTools
     public class Window : Form
     {
         private System.ComponentModel.IContainer components = null;
+        private string FileName;
 
         protected override void Dispose(bool disposing)
         {
@@ -17,6 +18,19 @@ namespace CompileTools
 
         public Window()
         {
+            FileName = System.Environment.GetCommandLineArgs()[0];
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Window
+            // 
+            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Name = "Window";
+            this.ResumeLayout(false);
 
         }
     }
