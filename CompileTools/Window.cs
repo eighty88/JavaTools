@@ -10,6 +10,8 @@ namespace CompileTools
         private GroupBox groupBoxJDK;
         private CheckedListBox checkedListBoxJDK;
         private GroupBox groupBoxDependency;
+        private Button buttonMinusJDK;
+        private Button buttonPlusJDK;
         private string fileName;
 
         protected override void Dispose(bool disposing)
@@ -43,16 +45,20 @@ namespace CompileTools
             this.groupBoxJDK = new System.Windows.Forms.GroupBox();
             this.checkedListBoxJDK = new System.Windows.Forms.CheckedListBox();
             this.groupBoxDependency = new System.Windows.Forms.GroupBox();
+            this.buttonPlusJDK = new System.Windows.Forms.Button();
+            this.buttonMinusJDK = new System.Windows.Forms.Button();
             this.groupBoxJDK.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxJDK
             // 
+            this.groupBoxJDK.Controls.Add(this.buttonMinusJDK);
+            this.groupBoxJDK.Controls.Add(this.buttonPlusJDK);
             this.groupBoxJDK.Controls.Add(this.checkedListBoxJDK);
             this.groupBoxJDK.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.groupBoxJDK.Location = new System.Drawing.Point(12, 97);
+            this.groupBoxJDK.Location = new System.Drawing.Point(12, 85);
             this.groupBoxJDK.Name = "groupBoxJDK";
-            this.groupBoxJDK.Size = new System.Drawing.Size(335, 394);
+            this.groupBoxJDK.Size = new System.Drawing.Size(335, 406);
             this.groupBoxJDK.TabIndex = 0;
             this.groupBoxJDK.TabStop = false;
             this.groupBoxJDK.Text = "JDKの設定";
@@ -64,7 +70,7 @@ namespace CompileTools
             this.checkedListBoxJDK.CheckOnClick = true;
             this.checkedListBoxJDK.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.checkedListBoxJDK.FormattingEnabled = true;
-            this.checkedListBoxJDK.Location = new System.Drawing.Point(6, 46);
+            this.checkedListBoxJDK.Location = new System.Drawing.Point(6, 60);
             this.checkedListBoxJDK.Name = "checkedListBoxJDK";
             this.checkedListBoxJDK.Size = new System.Drawing.Size(323, 340);
             this.checkedListBoxJDK.TabIndex = 0;
@@ -73,12 +79,33 @@ namespace CompileTools
             // groupBoxDependency
             // 
             this.groupBoxDependency.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.groupBoxDependency.Location = new System.Drawing.Point(353, 97);
+            this.groupBoxDependency.Location = new System.Drawing.Point(353, 85);
             this.groupBoxDependency.Name = "groupBoxDependency";
-            this.groupBoxDependency.Size = new System.Drawing.Size(419, 394);
+            this.groupBoxDependency.Size = new System.Drawing.Size(419, 406);
             this.groupBoxDependency.TabIndex = 1;
             this.groupBoxDependency.TabStop = false;
             this.groupBoxDependency.Text = "依存関係";
+            // 
+            // buttonPlusJDK
+            // 
+            this.buttonPlusJDK.FlatAppearance.BorderSize = 0;
+            this.buttonPlusJDK.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonPlusJDK.Location = new System.Drawing.Point(267, 24);
+            this.buttonPlusJDK.Name = "buttonPlusJDK";
+            this.buttonPlusJDK.Size = new System.Drawing.Size(28, 30);
+            this.buttonPlusJDK.TabIndex = 1;
+            this.buttonPlusJDK.Text = "+";
+            this.buttonPlusJDK.UseVisualStyleBackColor = true;
+            // 
+            // buttonMinusJDK
+            // 
+            this.buttonMinusJDK.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonMinusJDK.Location = new System.Drawing.Point(301, 24);
+            this.buttonMinusJDK.Name = "buttonMinusJDK";
+            this.buttonMinusJDK.Size = new System.Drawing.Size(28, 30);
+            this.buttonMinusJDK.TabIndex = 2;
+            this.buttonMinusJDK.Text = "－";
+            this.buttonMinusJDK.UseVisualStyleBackColor = true;
             // 
             // Window
             // 

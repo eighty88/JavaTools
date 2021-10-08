@@ -44,6 +44,17 @@ namespace JavaToolsLib.RegistryLib
                 registryKey.Close();
             }
 
+            registryKey = localKey.OpenSubKey(@"SOFTWARE\Eclipse Foundation\" + newerPath);
+            if (registryKey != null)
+            {
+                foreach (string str in registryKey.GetSubKeyNames())
+                {
+                    list.Add(str + "$" + "AdoptOpenJDK");
+                }
+
+                registryKey.Close();
+            }
+
             return list.ToArray();
         }
 
