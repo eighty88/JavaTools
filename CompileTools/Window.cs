@@ -12,9 +12,12 @@ namespace CompileTools
         private GroupBox groupBoxDependency;
         private Button buttonRemoveJDK;
         private Button buttonAddJDK;
-        private ListBox listBox1;
+        private ListBox listBoxDependencies;
         private Button buttonRemoveDependencies;
         private Button buttonAddDependencies;
+        private Button buttonURLDependencies;
+        private Button buttonCompile;
+        private Button buttonSaveFile;
         private string fileName;
 
         protected override void Dispose(bool disposing)
@@ -50,9 +53,12 @@ namespace CompileTools
             this.buttonAddJDK = new System.Windows.Forms.Button();
             this.checkedListBoxJDK = new System.Windows.Forms.CheckedListBox();
             this.groupBoxDependency = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxDependencies = new System.Windows.Forms.ListBox();
             this.buttonAddDependencies = new System.Windows.Forms.Button();
             this.buttonRemoveDependencies = new System.Windows.Forms.Button();
+            this.buttonURLDependencies = new System.Windows.Forms.Button();
+            this.buttonCompile = new System.Windows.Forms.Button();
+            this.buttonSaveFile = new System.Windows.Forms.Button();
             this.groupBoxJDK.SuspendLayout();
             this.groupBoxDependency.SuspendLayout();
             this.SuspendLayout();
@@ -106,9 +112,10 @@ namespace CompileTools
             // 
             // groupBoxDependency
             // 
+            this.groupBoxDependency.Controls.Add(this.buttonURLDependencies);
             this.groupBoxDependency.Controls.Add(this.buttonRemoveDependencies);
             this.groupBoxDependency.Controls.Add(this.buttonAddDependencies);
-            this.groupBoxDependency.Controls.Add(this.listBox1);
+            this.groupBoxDependency.Controls.Add(this.listBoxDependencies);
             this.groupBoxDependency.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupBoxDependency.Location = new System.Drawing.Point(353, 85);
             this.groupBoxDependency.Name = "groupBoxDependency";
@@ -117,15 +124,15 @@ namespace CompileTools
             this.groupBoxDependency.TabStop = false;
             this.groupBoxDependency.Text = "依存関係";
             // 
-            // listBox1
+            // listBoxDependencies
             // 
-            this.listBox1.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 24;
-            this.listBox1.Location = new System.Drawing.Point(6, 60);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(407, 340);
-            this.listBox1.TabIndex = 0;
+            this.listBoxDependencies.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.listBoxDependencies.FormattingEnabled = true;
+            this.listBoxDependencies.ItemHeight = 24;
+            this.listBoxDependencies.Location = new System.Drawing.Point(6, 60);
+            this.listBoxDependencies.Name = "listBoxDependencies";
+            this.listBoxDependencies.Size = new System.Drawing.Size(407, 340);
+            this.listBoxDependencies.TabIndex = 0;
             // 
             // buttonAddDependencies
             // 
@@ -147,9 +154,41 @@ namespace CompileTools
             this.buttonRemoveDependencies.Text = "－";
             this.buttonRemoveDependencies.UseVisualStyleBackColor = true;
             // 
+            // buttonURLDependencies
+            // 
+            this.buttonURLDependencies.Font = new System.Drawing.Font("メイリオ", 12F);
+            this.buttonURLDependencies.Location = new System.Drawing.Point(257, 24);
+            this.buttonURLDependencies.Name = "buttonURLDependencies";
+            this.buttonURLDependencies.Size = new System.Drawing.Size(84, 30);
+            this.buttonURLDependencies.TabIndex = 3;
+            this.buttonURLDependencies.Text = "+ (URL)";
+            this.buttonURLDependencies.UseVisualStyleBackColor = true;
+            // 
+            // buttonCompile
+            // 
+            this.buttonCompile.Font = new System.Drawing.Font("メイリオ", 9F);
+            this.buttonCompile.Location = new System.Drawing.Point(609, 511);
+            this.buttonCompile.Name = "buttonCompile";
+            this.buttonCompile.Size = new System.Drawing.Size(150, 30);
+            this.buttonCompile.TabIndex = 2;
+            this.buttonCompile.Text = "コンパイルする";
+            this.buttonCompile.UseVisualStyleBackColor = true;
+            // 
+            // buttonSaveFile
+            // 
+            this.buttonSaveFile.Font = new System.Drawing.Font("メイリオ", 9F);
+            this.buttonSaveFile.Location = new System.Drawing.Point(403, 511);
+            this.buttonSaveFile.Name = "buttonSaveFile";
+            this.buttonSaveFile.Size = new System.Drawing.Size(200, 30);
+            this.buttonSaveFile.TabIndex = 3;
+            this.buttonSaveFile.Text = "設定をファイルに出力";
+            this.buttonSaveFile.UseVisualStyleBackColor = true;
+            // 
             // Window
             // 
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.buttonSaveFile);
+            this.Controls.Add(this.buttonCompile);
             this.Controls.Add(this.groupBoxDependency);
             this.Controls.Add(this.groupBoxJDK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
