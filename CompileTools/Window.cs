@@ -10,8 +10,11 @@ namespace CompileTools
         private GroupBox groupBoxJDK;
         private CheckedListBox checkedListBoxJDK;
         private GroupBox groupBoxDependency;
-        private Button buttonMinusJDK;
-        private Button buttonPlusJDK;
+        private Button buttonRemoveJDK;
+        private Button buttonAddJDK;
+        private ListBox listBox1;
+        private Button buttonRemoveDependencies;
+        private Button buttonAddDependencies;
         private string fileName;
 
         protected override void Dispose(bool disposing)
@@ -43,17 +46,21 @@ namespace CompileTools
         private void InitializeComponent()
         {
             this.groupBoxJDK = new System.Windows.Forms.GroupBox();
+            this.buttonRemoveJDK = new System.Windows.Forms.Button();
+            this.buttonAddJDK = new System.Windows.Forms.Button();
             this.checkedListBoxJDK = new System.Windows.Forms.CheckedListBox();
             this.groupBoxDependency = new System.Windows.Forms.GroupBox();
-            this.buttonPlusJDK = new System.Windows.Forms.Button();
-            this.buttonMinusJDK = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.buttonAddDependencies = new System.Windows.Forms.Button();
+            this.buttonRemoveDependencies = new System.Windows.Forms.Button();
             this.groupBoxJDK.SuspendLayout();
+            this.groupBoxDependency.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxJDK
             // 
-            this.groupBoxJDK.Controls.Add(this.buttonMinusJDK);
-            this.groupBoxJDK.Controls.Add(this.buttonPlusJDK);
+            this.groupBoxJDK.Controls.Add(this.buttonRemoveJDK);
+            this.groupBoxJDK.Controls.Add(this.buttonAddJDK);
             this.groupBoxJDK.Controls.Add(this.checkedListBoxJDK);
             this.groupBoxJDK.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupBoxJDK.Location = new System.Drawing.Point(12, 85);
@@ -62,6 +69,27 @@ namespace CompileTools
             this.groupBoxJDK.TabIndex = 0;
             this.groupBoxJDK.TabStop = false;
             this.groupBoxJDK.Text = "JDKの設定";
+            // 
+            // buttonRemoveJDK
+            // 
+            this.buttonRemoveJDK.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRemoveJDK.Location = new System.Drawing.Point(299, 24);
+            this.buttonRemoveJDK.Name = "buttonRemoveJDK";
+            this.buttonRemoveJDK.Size = new System.Drawing.Size(30, 30);
+            this.buttonRemoveJDK.TabIndex = 2;
+            this.buttonRemoveJDK.Text = "－";
+            this.buttonRemoveJDK.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddJDK
+            // 
+            this.buttonAddJDK.FlatAppearance.BorderSize = 0;
+            this.buttonAddJDK.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAddJDK.Location = new System.Drawing.Point(263, 24);
+            this.buttonAddJDK.Name = "buttonAddJDK";
+            this.buttonAddJDK.Size = new System.Drawing.Size(30, 30);
+            this.buttonAddJDK.TabIndex = 1;
+            this.buttonAddJDK.Text = "+";
+            this.buttonAddJDK.UseVisualStyleBackColor = true;
             // 
             // checkedListBoxJDK
             // 
@@ -78,6 +106,9 @@ namespace CompileTools
             // 
             // groupBoxDependency
             // 
+            this.groupBoxDependency.Controls.Add(this.buttonRemoveDependencies);
+            this.groupBoxDependency.Controls.Add(this.buttonAddDependencies);
+            this.groupBoxDependency.Controls.Add(this.listBox1);
             this.groupBoxDependency.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupBoxDependency.Location = new System.Drawing.Point(353, 85);
             this.groupBoxDependency.Name = "groupBoxDependency";
@@ -86,26 +117,35 @@ namespace CompileTools
             this.groupBoxDependency.TabStop = false;
             this.groupBoxDependency.Text = "依存関係";
             // 
-            // buttonPlusJDK
+            // listBox1
             // 
-            this.buttonPlusJDK.FlatAppearance.BorderSize = 0;
-            this.buttonPlusJDK.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonPlusJDK.Location = new System.Drawing.Point(267, 24);
-            this.buttonPlusJDK.Name = "buttonPlusJDK";
-            this.buttonPlusJDK.Size = new System.Drawing.Size(28, 30);
-            this.buttonPlusJDK.TabIndex = 1;
-            this.buttonPlusJDK.Text = "+";
-            this.buttonPlusJDK.UseVisualStyleBackColor = true;
+            this.listBox1.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 24;
+            this.listBox1.Location = new System.Drawing.Point(6, 60);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(407, 340);
+            this.listBox1.TabIndex = 0;
             // 
-            // buttonMinusJDK
+            // buttonAddDependencies
             // 
-            this.buttonMinusJDK.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonMinusJDK.Location = new System.Drawing.Point(301, 24);
-            this.buttonMinusJDK.Name = "buttonMinusJDK";
-            this.buttonMinusJDK.Size = new System.Drawing.Size(28, 30);
-            this.buttonMinusJDK.TabIndex = 2;
-            this.buttonMinusJDK.Text = "－";
-            this.buttonMinusJDK.UseVisualStyleBackColor = true;
+            this.buttonAddDependencies.Font = new System.Drawing.Font("メイリオ", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonAddDependencies.Location = new System.Drawing.Point(347, 24);
+            this.buttonAddDependencies.Name = "buttonAddDependencies";
+            this.buttonAddDependencies.Size = new System.Drawing.Size(30, 30);
+            this.buttonAddDependencies.TabIndex = 1;
+            this.buttonAddDependencies.Text = "+";
+            this.buttonAddDependencies.UseVisualStyleBackColor = true;
+            // 
+            // buttonRemoveDependencies
+            // 
+            this.buttonRemoveDependencies.Font = new System.Drawing.Font("メイリオ", 12F);
+            this.buttonRemoveDependencies.Location = new System.Drawing.Point(383, 24);
+            this.buttonRemoveDependencies.Name = "buttonRemoveDependencies";
+            this.buttonRemoveDependencies.Size = new System.Drawing.Size(30, 30);
+            this.buttonRemoveDependencies.TabIndex = 2;
+            this.buttonRemoveDependencies.Text = "－";
+            this.buttonRemoveDependencies.UseVisualStyleBackColor = true;
             // 
             // Window
             // 
@@ -116,7 +156,9 @@ namespace CompileTools
             this.MaximizeBox = false;
             this.Name = "Window";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.Window_Load);
             this.groupBoxJDK.ResumeLayout(false);
+            this.groupBoxDependency.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -141,6 +183,11 @@ namespace CompileTools
             }
 
             checkedListBoxJDK.ItemCheck += checkedListBoxJDK_ItemCheck;
+        }
+
+        private void Window_Load(object sender, System.EventArgs e)
+        {
+
         }
     }
 }
